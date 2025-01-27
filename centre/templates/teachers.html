@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>NOM</th>
+                <th>COGNOM 1</th>
+                <th>COGNOM 2</th>
+                <th>CORREU</th>
+                <th>CURS</th>
+                <th>TUTOR</th>
+                <th>MÒDULS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in professors %}
+            <tr>
+                <td>{{ teacher.name }}</td>
+                <td>{{ teacher.surname1 }}</td>
+                <td>{{ teacher.surname2 }}</td>
+                <td>{{ teacher.email }}</td>
+                <td>{{ teacher.curs }}</td>
+                <td>{{ teacher.tutor }}</td>
+                <td>{{ teacher.modules }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
