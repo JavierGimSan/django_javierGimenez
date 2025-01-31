@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Professor</title>
 </head>
 <body>
     {% extends 'index.html' %}
     {% block content%}
-
-    <a href="{% url 'students' %}">ALUMNAT</a>
 
     <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
     <table>
@@ -26,7 +24,6 @@
             </tr>
         </thead>
         <tbody>
-            {% for teacher in professors %}
             <tr>
                 <td>{{ teacher.id }}</td>
                 <td>{{ teacher.name }}</td>
@@ -35,11 +32,12 @@
                 <td>{{ teacher.email }}</td>
                 <td>{{ teacher.curs }}</td>
                 <td>{{ teacher.tutor }}</td>
-                <td>{{ teacher.modules }} <a href="{% url 'teacher' teacher.id %}"> +INFO</a></td>
+                <td>{{ teacher.modules }}</td>
             </tr>
-            {% endfor %}
         </tbody>
     </table>
+    <br>
+    <a href="{% url 'teachers' %}">ENRRERE</a>
     
     {% endblock %}
 </body>
