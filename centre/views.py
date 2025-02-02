@@ -38,7 +38,7 @@ def teachers(request):
     context = {'professors': professors}
     return render(request, 'teachers.html', context)
 
-#Funció per a l'exercici 1, endpoint "/alumnes"
+#Funció per a l'exercici 1 modificada per a l'exercici 3, endpoint "/alumnes"
 def students(request):    
     context = {'alumnes': alumnes}
     return render(request, 'students.html', context)
@@ -58,3 +58,14 @@ def student(request, pk):
         if i['id'] == pk:
             student_Obj = i
     return render(request, 'student.html', {'student': student_Obj})
+
+#Funció per a l'exercici 3
+def student_form(request):
+    form = StudentForm()
+    context = {'form':form}
+    return render(request, 'formStudent.html', context)
+
+def teacher_form(request):
+    form = TeacherForm()
+    context = {'form':form}
+    return render(request, 'formTeacher.html', context)
