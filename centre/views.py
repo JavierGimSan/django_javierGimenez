@@ -3,6 +3,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
+from .forms import StudentForm, TeacherForm
+
+
+
 
 #Funció de prova
 def index(request):
@@ -61,15 +65,15 @@ def student(request, pk):
 
 #Funcions per a l'exercici 3
 
-def students(request, pk):
-    students = Student.objects.get(id=pk)
-    context = {'students': students}
-    return render(request, 'students.html', context)
+# def students(request, pk):
+#     students = Student.objects.get(id=pk)
+#     context = {'students': students}
+#     return render(request, 'students.html', context)
 
-def teachers(request, pk):
-    teachers = Teacher.objects.get(id=pk)
-    context = {'teachers': teachers}
-    return render(request, 'teachers.html', context)
+# def teachers(request, pk):
+#     teachers = Teacher.objects.get(id=pk)
+#     context = {'teachers': teachers}
+#     return render(request, 'teachers.html', context)
 
 
 def student_form(request):

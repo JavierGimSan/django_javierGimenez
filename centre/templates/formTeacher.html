@@ -14,9 +14,11 @@
 
     <form action=""method="POST">
         {% csrf_token %}
-
+        {{ form.as_p }}
         <input type="submit">
     </form>
+
+    <a href="{% url 'teachers' %}">ENRRERE</a>
 
     {% endblock %}
 </body>
