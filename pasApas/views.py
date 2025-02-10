@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-
+##
 def guardar_sesion(request):
     request.session['usuario'] = 'Juan'
     return render(request, 'missatge.html')
