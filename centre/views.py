@@ -3,6 +3,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
+from .models import Student, Teacher
+
+from .forms import StudentForm, TeacherForm
+
+
+
 
 #Funció de prova
 def index(request):
@@ -58,3 +64,26 @@ def student(request, pk):
         if i['id'] == pk:
             student_Obj = i
     return render(request, 'student.html', {'student': student_Obj})
+
+#Funcions per a l'exercici 3
+
+# def students(request, pk):
+#     students = Student.objects.get(id=pk)
+#     context = {'students': students}
+#     return render(request, 'students.html', context)
+
+# def teachers(request, pk):
+#     teachers = Teacher.objects.get(id=pk)
+#     context = {'teachers': teachers}
+#     return render(request, 'teachers.html', context)
+
+
+def student_form(request):
+    form = StudentForm()
+    context = {'form':form}
+    return render(request, 'formStudent.html', context)
+
+def teacher_form(request):
+    form = TeacherForm()
+    context = {'form':form}
+    return render(request, 'formTeacher.html', context)

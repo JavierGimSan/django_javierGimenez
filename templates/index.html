@@ -7,10 +7,14 @@
 </head>
 <body>
     {% include "head/header.html" %}
-
+    
+    <a href="{% url 'student-form' %}">Afegir Alumne</a>
+    <a href="{% url 'teacher-form' %}">Afegir Professor</a>
     {% block content %}
 
     {% endblock %}
+    
+     
     
 </body>
 </html>
