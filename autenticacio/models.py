@@ -7,7 +7,8 @@ from django.db import models
 # 3 camps amb max_length.
 
 class User(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100)
     surname1 = models.CharField(max_length=100)
     age = models.CharField(max_length=3)
-    email = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, unique=True)
+    password = models.CharField(max_length=100)
